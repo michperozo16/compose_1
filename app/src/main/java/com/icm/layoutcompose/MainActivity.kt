@@ -33,6 +33,15 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
+fun MyApp(content: @Composable ()-> Unit) {
+    LayoutComposeTheme {
+        Surface(color = Color.Yellow){
+            content()
+
+        }
+    }
+}
+@Composable
 fun MyScreenContent(names: List<String> = List(1000){ "Hola $it "}){
     val counterState = remember { mutableStateOf(0) }
     Column(modifier = Modifier.fillMaxHeight()) {
@@ -62,15 +71,7 @@ fun Counter(count: Int, updateCount: (Int) -> Unit){
         Text("Has clicado $count veces")
     }
 }
-@Composable
-fun MyApp(content: @Composable ()-> Unit) {
-    LayoutComposeTheme {
-        Surface(color = Color.Yellow){
-        content()
 
-        }
-    }
-}
 @Composable
 fun Greeting(name: String) {
 
