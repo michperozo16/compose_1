@@ -46,9 +46,9 @@ fun MyScreenContent(names: List<String> = List(1000){ "Hola $it "}){
     }
 }
 @Composable
-fun NameList(names: List<String>, modifer: Modifier = Modifier){
+fun NameList(names: List<String>, modifier: Modifier = Modifier){
 
-    LazyColumn(modifier = modifer){
+    LazyColumn(modifier = modifier){
         items(items = names) {name ->
             Greeting(name = name)
             Divider(color = Color.Black)
